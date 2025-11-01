@@ -135,13 +135,14 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', function() {
                 const filter = this.getAttribute('data-filter');
                 
-                // Update active button
+                // Update active button styling
                 filterButtons.forEach(btn => {
-                    btn.classList.remove('bg-primary-900', 'text-white');
-                    btn.classList.add('bg-gray-200', 'hover:bg-gray-300', 'text-gray-700');
+                    btn.classList.remove('bg-gradient-to-r', 'from-primary-600', 'to-primary-700', 'text-white', 'shadow-xl');
+                    btn.classList.add('bg-gray-100', 'text-gray-700', 'shadow-md');
+                    btn.classList.remove('hover:shadow-2xl', 'transform', 'hover:-translate-y-1', 'hover:scale-105');
                 });
-                this.classList.remove('bg-gray-200', 'hover:bg-gray-300', 'text-gray-700');
-                this.classList.add('bg-primary-900', 'text-white');
+                this.classList.remove('bg-gray-100', 'text-gray-700', 'shadow-md');
+                this.classList.add('bg-gradient-to-r', 'from-primary-600', 'to-primary-700', 'text-white', 'shadow-xl', 'hover:shadow-2xl', 'transform', 'hover:-translate-y-1', 'hover:scale-105');
                 
                 // Filter templates
                 templateCardsFilter.forEach(card => {
