@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>All Website Templates - COWebs Template Store | Browse Premium Templates</title>
+    <meta name="title" content="All Website Templates - COWebs Template Store">
+    <meta name="description" content="Browse our complete collection of premium website templates. Restaurant, business, portfolio, and more. All templates are responsive, SEO-optimized, and ready to use.">
+    <meta name="keywords" content="website templates, html templates, responsive templates, restaurant templates, business templates, portfolio templates">
+    <meta name="author" content="COWebs.lb">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://templates.cowebslb.com/html/templates.html">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            50: '#e3f2fd',
+                            100: '#bbdefb',
+                            200: '#90caf9',
+                            300: '#64b5f6',
+                            400: '#42a5f5',
+                            500: '#2196f3',
+                            600: '#1e88e5',
+                            700: '#1976d2',
+                            800: '#1565c0',
+                            900: '#0d47a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- External CSS and JS -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-down {
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .animation-delay-200 {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-gray-50 overflow-x-hidden">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex flex-col lg:flex-row justify-between items-center py-4 gap-4 lg:gap-0 nav-container">
+                <div class="flex justify-between items-center w-full lg:w-auto">
+                    <a href="../index.html" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="../../COWebs-lb/logo.png" alt="COWebs Template Store" class="h-20 w-auto logo transition-all duration-300">
+                    </a>
+
+                    <!-- Hamburger Menu Button -->
+                    <div class="hamburger lg:hidden" id="hamburger">
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-8 desktop-nav">
+                    <ul class="flex space-x-8">
+                        <li><a href="../index.html" class="text-gray-700 hover:text-primary-900 font-medium transition-colors duration-300 relative group">
+                            Home
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="templates.html" class="text-primary-900 font-semibold transition-colors duration-300 relative group">
+                            Templates
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-500"></span>
+                        </a></li>
+                        <li><a href="about.html" class="text-gray-700 hover:text-primary-900 font-medium transition-colors duration-300 relative group">
+                            About
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="contact.html" class="text-gray-700 hover:text-primary-900 font-medium transition-colors duration-300 relative group">
+                            Contact
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                    </ul>
+                    <a href="templates.html" class="bg-gradient-to-r from-primary-900 to-primary-500 text-white px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                        View Templates
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation Menu -->
+                <div class="mobile-nav lg:hidden" id="mobile-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="cta-button">
+                            <a href="templates.html" class="bg-gradient-to-r from-primary-900 to-primary-500 text-white px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 inline-block">
+                                View Templates
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-900 to-primary-500 text-white py-24 lg:py-32 hero-pattern relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-down">Launch Your Website in Hours</h1>
+            <p class="text-xl lg:text-2xl mb-8 text-white/90 max-w-3xl mx-auto animate-fade-in-up">
+                Browse our collection of premium, ready-to-use website templates
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 text-sm font-medium animate-fade-in-up animation-delay-200">
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">✓ Responsive</span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">✓ SEO Optimized</span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">✓ Fast Setup</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="py-8 bg-white border-b border-gray-200 sticky top-20 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button class="filter-btn bg-primary-900 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg" data-filter="all">
+                    All Categories
+                </button>
+                <button class="filter-btn bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300" data-filter="restaurant">
+                    Restaurant & Cafe
+                </button>
+                <button class="filter-btn bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300" data-filter="business">
+                    Business
+                </button>
+                <button class="filter-btn bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300" data-filter="portfolio">
+                    Portfolio
+                </button>
+                <button class="filter-btn bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300" data-filter="ecommerce">
+                    E-commerce
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Grid -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Premium Templates</h2>
+                <p class="text-gray-600">Choose from our handpicked collection of professional website templates</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Template 1 -->
+                <div class="template-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden animate-on-scroll" data-category="restaurant">
+                    <div class="relative h-64 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden group">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-utensils text-7xl text-primary-600 opacity-60 group-hover:opacity-80 transition-opacity duration-300"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-primary-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">Restaurant</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-2">
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ Responsive</span>
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ SEO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Restaurant Template</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Perfect for restaurants, cafes, and food businesses. Includes menu, ordering, and gallery sections.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div>
+                                <span class="text-3xl font-bold text-primary-900">$49</span>
+                                <span class="text-sm text-gray-500 ml-2">One-time</span>
+                            </div>
+                            <a href="template-detail.html" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 2 -->
+                <div class="template-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden animate-on-scroll" data-category="business">
+                    <div class="relative h-64 bg-gradient-to-br from-blue-100 to-blue-200 overflow-hidden group">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-briefcase text-7xl text-blue-600 opacity-60 group-hover:opacity-80 transition-opacity duration-300"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-blue-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">Business</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-2">
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ Responsive</span>
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ SEO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Business Template</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Professional business website template with services, about, and contact sections.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div>
+                                <span class="text-3xl font-bold text-primary-900">$39</span>
+                                <span class="text-sm text-gray-500 ml-2">One-time</span>
+                            </div>
+                            <a href="template-detail.html" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 3 -->
+                <div class="template-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden animate-on-scroll" data-category="portfolio">
+                    <div class="relative h-64 bg-gradient-to-br from-purple-100 to-purple-200 overflow-hidden group">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-user-circle text-7xl text-purple-600 opacity-60 group-hover:opacity-80 transition-opacity duration-300"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-purple-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">Portfolio</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-2">
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ Responsive</span>
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ SEO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Portfolio Template</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Showcase your work with this stunning portfolio template. Perfect for designers and creatives.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div>
+                                <span class="text-3xl font-bold text-primary-900">$45</span>
+                                <span class="text-sm text-gray-500 ml-2">One-time</span>
+                            </div>
+                            <a href="template-detail.html" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 4 -->
+                <div class="template-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden animate-on-scroll" data-category="ecommerce">
+                    <div class="relative h-64 bg-gradient-to-br from-green-100 to-green-200 overflow-hidden group">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-7xl text-green-600 opacity-60 group-hover:opacity-80 transition-opacity duration-300"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">E-commerce</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-2">
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ Responsive</span>
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ SEO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">E-commerce Template</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Complete e-commerce solution with product catalog, cart, and checkout functionality.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div>
+                                <span class="text-3xl font-bold text-primary-900">$79</span>
+                                <span class="text-sm text-gray-500 ml-2">One-time</span>
+                            </div>
+                            <a href="template-detail.html" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 5 -->
+                <div class="template-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden animate-on-scroll" data-category="restaurant">
+                    <div class="relative h-64 bg-gradient-to-br from-orange-100 to-orange-200 overflow-hidden group">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-coffee text-7xl text-orange-600 opacity-60 group-hover:opacity-80 transition-opacity duration-300"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-orange-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">Cafe</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-2">
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ Responsive</span>
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ SEO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Cafe Template</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Beautiful cafe website template with menu, about, and contact sections. Perfect for coffee shops.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div>
+                                <span class="text-3xl font-bold text-primary-900">$44</span>
+                                <span class="text-sm text-gray-500 ml-2">One-time</span>
+                            </div>
+                            <a href="template-detail.html" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 6 -->
+                <div class="template-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden animate-on-scroll" data-category="business">
+                    <div class="relative h-64 bg-gradient-to-br from-indigo-100 to-indigo-200 overflow-hidden group">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-building text-7xl text-indigo-600 opacity-60 group-hover:opacity-80 transition-opacity duration-300"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-indigo-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">Corporate</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-2">
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ Responsive</span>
+                            <span class="bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700 px-2.5 py-1 rounded-full">✓ SEO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Corporate Template</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Professional corporate website template with team, services, and testimonials sections.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div>
+                                <span class="text-3xl font-bold text-primary-900">$54</span>
+                                <span class="text-sm text-gray-500 ml-2">One-time</span>
+                            </div>
+                            <a href="template-detail.html" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="footer-col">
+                    <h3 class="text-2xl font-bold mb-6">COWebs Template Store</h3>
+                    <p class="text-gray-400 mb-6">Premium website templates for businesses of all sizes.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="text-lg font-semibold mb-6">Templates</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="templates.html" class="hover:text-white transition-colors duration-300">All Categories</a></li>
+                        <li><a href="templates.html?category=restaurant" class="hover:text-white transition-colors duration-300">Restaurant & Cafe</a></li>
+                        <li><a href="templates.html?category=business" class="hover:text-white transition-colors duration-300">Business</a></li>
+                        <li><a href="templates.html?category=portfolio" class="hover:text-white transition-colors duration-300">Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="text-lg font-semibold mb-6">Resources</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i>cowebs.lb@gmail.com</li>
+                        <li><i class="fas fa-phone mr-2"></i>+961 81 796 383</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2025 COWebs Template Store. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>
+
