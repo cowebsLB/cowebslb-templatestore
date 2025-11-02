@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>My Profile - COWebs Template Store</title>
+    <meta name="description" content="View your profile and purchased templates on COWebs Template Store.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            50: '#f3e5f5',
+                            100: '#e1bee7',
+                            200: '#ce93d8',
+                            300: '#ba68c8',
+                            400: '#ab47bc',
+                            500: '#9c27b0',
+                            600: '#8e24aa',
+                            700: '#7b1fa2',
+                            800: '#6a1b9a',
+                            900: '#4a148c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon/favicon.ico">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-poppins bg-gray-50 overflow-x-hidden">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex flex-col lg:flex-row justify-between items-center py-4 gap-4 lg:gap-0 nav-container">
+                <div class="flex justify-between items-center w-full lg:w-auto">
+                    <a href="../index.html" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="../logo.png" alt="COWebs Template Store" class="h-20 w-auto logo transition-all duration-300">
+                    </a>
+                    <div class="hamburger lg:hidden" id="hamburger">
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-8 desktop-nav">
+                    <ul class="flex space-x-8">
+                        <li><a href="../index.html" class="text-gray-700 hover:text-primary-900 font-medium transition-colors duration-300 relative group">Home</a></li>
+                        <li><a href="templates.html" class="text-gray-700 hover:text-primary-900 font-medium transition-colors duration-300 relative group">Templates</a></li>
+                        <li><a href="profile.html" class="text-primary-900 font-semibold transition-colors duration-300 relative group">Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-20">
+            <i class="fas fa-spinner fa-spin text-5xl text-primary-600 mb-4"></i>
+            <p class="text-gray-600">Loading profile...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="hidden text-center py-20">
+            <i class="fas fa-exclamation-circle text-5xl text-red-500 mb-4"></i>
+            <p class="text-gray-600 mb-4">Failed to load profile. Please try again.</p>
+            <a href="../index.html" class="text-primary-600 hover:text-primary-700 font-semibold">Return to Home</a>
+        </div>
+
+        <!-- Profile Content -->
+        <div id="profileContent" class="hidden">
+            <!-- Profile Header -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                    <div class="w-32 h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white text-5xl font-bold">
+                        <span id="profileInitials">U</span>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2" id="profileName">User Name</h1>
+                        <p class="text-gray-600 mb-4" id="profileEmail">user@email.com</p>
+                        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                            <span class="bg-primary-100 text-primary-700 px-4 py-2 rounded-full font-semibold text-sm" id="profileRole">User</span>
+                            <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-semibold text-sm">
+                                Member since: <span id="memberSince">2024</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Purchased Templates -->
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                    <i class="fas fa-shopping-bag mr-3 text-primary-600"></i>My Purchased Templates
+                </h2>
+                <div id="purchasedTemplates" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Templates will be loaded here -->
+                </div>
+                <div id="noPurchases" class="hidden text-center py-12">
+                    <i class="fas fa-box-open text-6xl text-gray-300 mb-4"></i>
+                    <p class="text-gray-600 text-lg mb-4">You haven't purchased any templates yet.</p>
+                    <a href="templates.html" class="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-3 rounded-full font-bold text-lg uppercase tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 inline-block">
+                        Browse Templates
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-600">
+                <p>&copy; 2024 COWebs Template Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Supabase Config -->
+    <script src="../js/supabase-config.js"></script>
+    <!-- Auth Utilities -->
+    <script src="../js/auth.js"></script>
+    <!-- Templates API -->
+    <script src="../js/templates-api.js"></script>
+    <!-- Main Script -->
+    <script src="../js/script.js"></script>
+    
+    <script>
+        // Load user profile and purchases
+        async function loadProfile() {
+            const loading = document.getElementById('loading');
+            const error = document.getElementById('error');
+            const content = document.getElementById('profileContent');
+            
+            try {
+                // Check authentication
+                const authenticated = await isAuthenticated();
+                if (!authenticated) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+                
+                const user = await getCurrentUser();
+                if (!user) {
+                    throw new Error('User not found');
+                }
+                
+                // Get profile
+                const profile = await getUserProfile(user.id);
+                if (!profile) {
+                    throw new Error('Profile not found');
+                }
+                
+                // Update profile display
+                document.getElementById('profileName').textContent = profile.full_name || profile.email || 'User';
+                document.getElementById('profileEmail').textContent = profile.email;
+                document.getElementById('profileRole').textContent = profile.role === 'admin' ? 'Administrator' : 'User';
+                
+                // Get initials
+                const initials = (profile.full_name || profile.email || 'U').charAt(0).toUpperCase();
+                document.getElementById('profileInitials').textContent = initials;
+                
+                // Member since
+                const memberSince = new Date(profile.created_at).getFullYear();
+                document.getElementById('memberSince').textContent = memberSince;
+                
+                // Load purchased templates
+                const { data: purchases, error: purchasesError } = await supabase
+                    .from('purchases')
+                    .select(`
+                        *,
+                        templates (*)
+                    `)
+                    .eq('user_id', user.id)
+                    .eq('status', 'completed')
+                    .order('created_at', { ascending: false });
+                
+                if (purchasesError) {
+                    console.error('Error loading purchases:', purchasesError);
+                }
+                
+                const purchasedTemplatesDiv = document.getElementById('purchasedTemplates');
+                const noPurchasesDiv = document.getElementById('noPurchases');
+                
+                if (!purchases || purchases.length === 0) {
+                    purchasedTemplatesDiv.classList.add('hidden');
+                    noPurchasesDiv.classList.remove('hidden');
+                } else {
+                    purchasedTemplatesDiv.innerHTML = purchases.map(purchase => {
+                        const template = purchase.templates;
+                        if (!template) return '';
+                        
+                        return `
+                            <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">${template.title}</h3>
+                                <p class="text-gray-600 text-sm mb-4">${template.short_description || 'Template description'}</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-500">Purchased: ${new Date(purchase.created_at).toLocaleDateString()}</span>
+                                    ${purchase.download_link ? `
+                                        <a href="${purchase.download_link}" target="_blank" class="bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary-700 transition-colors">
+                                            <i class="fas fa-download mr-2"></i>Download
+                                        </a>
+                                    ` : `
+                                        <span class="text-sm text-gray-500">Link pending</span>
+                                    `}
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                    
+                    purchasedTemplatesDiv.classList.remove('hidden');
+                    noPurchasesDiv.classList.add('hidden');
+                }
+                
+                // Show content
+                loading.classList.add('hidden');
+                content.classList.remove('hidden');
+            } catch (err) {
+                console.error('Error loading profile:', err);
+                loading.classList.add('hidden');
+                error.classList.remove('hidden');
+            }
+        }
+        
+        // Load profile on page load
+        window.addEventListener('DOMContentLoaded', loadProfile);
+    </script>
+</body>
+</html>
+

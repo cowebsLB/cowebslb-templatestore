@@ -150,6 +150,8 @@
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
                         </a></li>
                     </ul>
+                    <!-- Auth buttons will be injected here by nav-auth.js -->
+                    <div class="auth-buttons flex items-center gap-4"></div>
                     <a href="templates.html" class="bg-gradient-to-r from-primary-900 to-primary-500 text-white px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                         View Templates
                     </a>
@@ -168,6 +170,8 @@
                             </a>
                         </li>
                     </ul>
+                    <!-- Auth buttons for mobile -->
+                    <div class="auth-buttons flex flex-col gap-3 mt-4 px-4"></div>
                 </div>
             </nav>
         </div>
@@ -224,9 +228,10 @@
                 </h2>
                 <p class="text-xl text-gray-600 mt-6">Choose from our handpicked collection of professional website templates</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 templates-grid">
+                <!-- Templates will be loaded dynamically from Supabase -->
                 <!-- Template 1 -->
-                <div class="template-card bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden animate-on-scroll group" data-category="restaurant">
+                <div class="template-card bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden animate-on-scroll group" data-category="restaurant" style="display: none;">
                     <div class="relative h-72 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
                         <!-- Desktop Preview -->
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -536,7 +541,56 @@
         </div>
     </footer>
     
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Supabase Config -->
+    <script src="../js/supabase-config.js"></script>
+    <!-- Auth Utilities -->
+    <script src="../js/auth.js"></script>
+    <!-- Navigation Auth -->
+    <script src="../js/nav-auth.js"></script>
+    <!-- Templates API -->
+    <script src="../js/templates-api.js"></script>
+    <!-- Dynamic Templates -->
+    <script src="../js/dynamic-templates.js"></script>
+    <!-- Main Script -->
     <script src="../js/script.js"></script>
+    
+    <script>
+        // Filter button functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        let currentCategory = 'all';
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', async function() {
+                const filter = this.getAttribute('data-filter');
+                currentCategory = filter;
+                
+                // Update active button styling
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-gradient-to-r', 'from-primary-600', 'to-primary-700', 'text-white', 'shadow-xl');
+                    btn.classList.add('bg-gray-100', 'text-gray-700', 'shadow-md');
+                });
+                this.classList.remove('bg-gray-100', 'text-gray-700', 'shadow-md');
+                this.classList.add('bg-gradient-to-r', 'from-primary-600', 'to-primary-700', 'text-white', 'shadow-xl');
+                
+                // Load templates for selected category
+                await loadTemplatesIntoContainer('.templates-grid', filter);
+            });
+        });
+        
+        // Load templates on page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Wait for Supabase to initialize
+            setTimeout(async () => {
+                try {
+                    await loadTemplatesIntoContainer('.templates-grid', currentCategory);
+                } catch (error) {
+                    console.error('Error loading templates:', error);
+                }
+            }, 500);
+        });
+    </script>
 </body>
 </html>
 

@@ -169,7 +169,10 @@
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
                         </a></li>
                     </ul>
-                    <a href="html/templates.html" class="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                    <!-- Auth buttons will be injected here by nav-auth.js -->
+                    <div class="auth-buttons flex items-center gap-4"></div>
+                    <!-- Browse Templates button (shown when logged in) -->
+                    <a href="html/templates.html" class="browse-templates-btn bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 flex items-center gap-2">
                         <i class="fas fa-th-large"></i>
                         Browse Templates
                     </a>
@@ -189,6 +192,8 @@
                             </a>
                         </li>
                     </ul>
+                    <!-- Auth buttons for mobile -->
+                    <div class="auth-buttons flex flex-col gap-3 mt-4 px-4"></div>
                 </div>
             </nav>
         </div>
@@ -255,7 +260,8 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 featured-templates">
+                <!-- Templates will be loaded dynamically from Supabase -->
                 <!-- Template Card 1 -->
                 <div class="template-card bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden animate-on-scroll group" data-category="restaurant">
                     <div class="relative h-72 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
@@ -588,8 +594,34 @@
         });
     </script>
     
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Supabase Config -->
+    <script src="js/supabase-config.js"></script>
+    <!-- Auth Utilities -->
+    <script src="js/auth.js"></script>
+    <!-- Navigation Auth -->
+    <script src="js/nav-auth.js"></script>
+    <!-- Templates API -->
+    <script src="js/templates-api.js"></script>
+    <!-- Dynamic Templates -->
+    <script src="js/dynamic-templates.js"></script>
     <!-- Link to external JavaScript -->
     <script src="js/script.js"></script>
+    
+    <script>
+        // Load featured templates on page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Wait a bit for Supabase to initialize
+            setTimeout(async () => {
+                try {
+                    await loadFeaturedTemplates(3);
+                } catch (error) {
+                    console.error('Error loading featured templates:', error);
+                }
+            }, 500);
+        });
+    </script>
 </body>
 </html>
 
